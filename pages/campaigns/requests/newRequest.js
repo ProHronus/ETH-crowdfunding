@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Card, Button, Form, Message, Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Layout from '../../../components/layout.js';
+import Layout from '../../../components/Layout.js';
 import { Link, Router } from '../../../routes';
 import campaignJS from '../../../ethereum/campaing.js';
 import web3JS from '../../../ethereum/web3';

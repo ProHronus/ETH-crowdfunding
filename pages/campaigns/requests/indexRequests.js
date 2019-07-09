@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../../../components/layout.js';
+import Layout from '../../../components/Layout.js';
 import { Grid, Table, Button, Form } from 'semantic-ui-react';
 import { Link } from '../../../routes';
 import campaignJS from '../../../ethereum/campaing.js';

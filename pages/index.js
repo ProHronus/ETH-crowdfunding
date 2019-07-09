@@ -2,7 +2,7 @@
 import web3JS from '../ethereum/web3';
 import factoryJS from '../ethereum/factory';
 import { Grid, Card, Button, Form } from 'semantic-ui-react';
-import Layout from '../components/layout.js';
+import Layout from '../components/Layout.js';
 import { Link } from '../routes';
 import PropTypes from 'prop-types';
 

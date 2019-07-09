@@ -5,7 +5,7 @@ import ContributeForm from '../../components/ContributeForm';
 import { Link } from '../../routes'
 import PropTypes from 'prop-types';
 
-import Layout from '../../components/layout.js';
+import Layout from '../../components/Layout.js';
 import campaignJS from '../../ethereum/campaing.js';
 
 let web3;

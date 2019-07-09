@@ -15,7 +15,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/campaigns/show": [
+    "/campaigns/requests/newRequest": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
