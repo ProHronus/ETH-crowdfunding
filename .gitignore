@@ -5,3 +5,4 @@ node_modules/
 ethereum/.env
 deploy.js
 compile.js
+next.config.js
