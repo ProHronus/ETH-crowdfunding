@@ -83,7 +83,7 @@ class CampaignIndex extends Component {
                             </Grid.Row>
                             <Grid.Row>
                                 <div className="Form"  >
-                                    <Form error={!!this.state.errorMessage}>
+                                    <Form error={!!this.state.errorMessage} style={{marginTop:10}}>
                                         <ErrorForm message={this.state.errorMessage} />
                                     </Form>
                                 </div>
