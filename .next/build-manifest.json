@@ -11,7 +11,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/campaigns/requests/newRequest": [
+    "/campaigns/requests/indexRequests": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/campaigns/show": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

@@ -1,5 +1,5 @@
 settings.json
 node_modules/
 ethereum/.env
-deploy.js
-compile.js
+ethereum/deploy.js
+ethereum/compile.js
