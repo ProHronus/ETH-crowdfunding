@@ -3,5 +3,5 @@ node_modules/
 .vs/
 .next/
 ethereum/.env
-ethereum/deploy.js
-ethereum/compile.js
+deploy.js
+compile.js
