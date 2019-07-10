@@ -1,5 +1,7 @@
 settings.json
 node_modules/
+.vs/
+.next/
 ethereum/.env
 ethereum/deploy.js
 ethereum/compile.js
