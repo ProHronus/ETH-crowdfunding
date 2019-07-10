@@ -5,8 +5,6 @@ import campaignJS from '../ethereum/campaing.js';
 import web3JS from '../ethereum/web3';
 import { Router } from '../routes';
 
-import { ErrorForm } from './ErrorForm';
-import { SuccessForm } from './SuccessForm';
 import { messageStrings } from '../ethereum/messagestrings';
 
 let web3;
@@ -29,7 +27,7 @@ class RequestRow extends Component {
         this.setState({ btnApproveLoading: true, errorMessage: '' });
 
         const campaign = await campaignJS.campaignInit(this.props.address);
-        accounts = await web3.eth.getAccounts();
+        const accounts = await web3.eth.getAccounts();
 
         try {
             await campaign.methods.approveRequest(this.props.id).send({
