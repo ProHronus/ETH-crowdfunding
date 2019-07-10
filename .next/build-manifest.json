@@ -1,5 +1,7 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_599a58a60c43245180de.js"
+  ],
   "pages": {
     "/_app": [
       "static/runtime/webpack.js",
@@ -10,10 +12,6 @@
       "static/runtime/main.js"
     ],
     "/campaigns/requests/newRequest": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
