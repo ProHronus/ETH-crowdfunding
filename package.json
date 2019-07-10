@@ -11,7 +11,7 @@
     "test": "\"mocha\".",
     "dev": "node server.js",
     "build": "next build",
-    "start": "node server.js"
+    "start": "node server.js -p $PORT"
   },
   "keywords": [],
   "license": "ISC",
