@@ -80,6 +80,25 @@
     "constant": true,
     "inputs": [
       {
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "isAlreadyApproved",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
         "name": "",
         "type": "uint256"
       }

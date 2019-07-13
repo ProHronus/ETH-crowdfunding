@@ -91,7 +91,7 @@ class NewCampaign extends Component {
                     this.setState({
                         confirmationNumber: confirmationNumber
                     });
-                    if (confirmationNumber == 3) {
+                    if (confirmationNumber == 2) {
                         Router.pushRoute('/');
                     }
                 }).on('error', (error) => {

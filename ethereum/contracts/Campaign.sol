@@ -56,8 +56,10 @@ contract Campaign  {
 
     function contribute() public payable {
         require(msg.value > minContribution, "The transaction value is less than minimum contribution");
+        if(!approvers[msg.sender]){
         approvers[msg.sender] = true;
         approversCount++;
+        }
     }
 
     function createRequest( string memory _desciption, uint _value, address payable _recipient) public onlyOwner {
@@ -81,11 +83,16 @@ contract Campaign  {
         request.approvalsThisRequest[msg.sender] = true;
         request.approvalCount++;
     }
+    
+    function isAlreadyApproved(uint index) public view returns (bool){
+        Request storage request = requests[index];
+        return request.approvalsThisRequest[msg.sender];
+    }
 
     function finalizeRequest(uint index) public onlyOwner {
         Request storage request = requests[index];
-        require(request.approvalCount > (approversCount / 2), "Less than 50% had approved the request");
         require(!request.complete, "Request already approved");
+        require(request.approvalCount > (approversCount / 2), "Less than 50% had approved the request");
         request.complete = true;
         request.recipient.transfer(request.value);
     }

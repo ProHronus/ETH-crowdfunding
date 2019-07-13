@@ -135,7 +135,7 @@ class ContributeForm extends Component {
                     />
                     <ErrorForm message={this.state.errorMessage} />
                     <SuccessForm hash={this.state.hash} confirmationNumber={this.state.confirmationNumber} />
-                    <Button primary disabled={this.state.btnDisabled} loading={this.state.btnLoading}>Contribute</Button>
+                    <Button primary style={{marginTop:10}} disabled={this.state.btnDisabled} loading={this.state.btnLoading}>Contribute</Button>
 
                 </Form.Field>
             </Form>

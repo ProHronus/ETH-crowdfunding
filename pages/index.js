@@ -13,8 +13,7 @@ let web3;
 class CampaignIndex extends Component {
 
     state = {
-        errorMessage: '',
-        campaigns: ''
+        errorMessage: ''
     };
 
 

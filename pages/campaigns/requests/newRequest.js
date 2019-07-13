@@ -103,7 +103,7 @@ class NewRequest extends Component {
                     this.setState({
                         confirmationNumber: confirmationNumber
                     });
-                    if (confirmationNumber == 3) {
+                    if (confirmationNumber == 2) {
                         Router.pushRoute(`/campaigns/${this.props.address}/requests`);
                     }
                 }).on('error', (error) => {

@@ -116,35 +116,42 @@ class RequestRow extends Component {
 
     FinalizerValidator() {
 
-            if (!this.props.request.complete) {
-                return (
-                    <Button color="green" basic disabled={this.props.btnDisabled}
-                        onClick={this.onFinalize}
-                        loading={this.state.btnFinalizeLoading}>
-                        Approve
+        if (!this.props.request.complete) {
+            return (
+                <Button color="green" basic disabled={this.props.btnDisabled}
+                    onClick={this.onFinalize}
+                    loading={this.state.btnFinalizeLoading}>
+                    Finalize
                 </Button>
-                )
-            } else {
-                return (
-                    <Label as='p' color='blue' >
-                        Finalized
+            )
+        } else {
+            return (
+                <Label as='p' color='blue' >
+                    Finalized
                 </Label>
-                )
-            }
+            )
         }
+    }
 
     ApprovedValidator() {
-        if (!this.props.request.complete) {
+        
+        if (this.props.request.complete) {
+            return null;
+        }
+
+        if (this.props.isAlreadyApproved) {
+            return (
+                <Button color="green" basic disabled >
+                    Approved
+                </Button>
+            )
+        } else {
             return (
                 <Button color="green" basic disabled={this.props.btnDisabled}
                     onClick={this.onApprove}
                     loading={this.state.btnApproveLoading}>
                     Approve
                 </Button>
-            )
-        } else {
-            return (
-              null
             )
         }
     }
@@ -173,7 +180,10 @@ class RequestRow extends Component {
 RequestRow.propTypes = {
     id: PropTypes.number.isRequired,
     request: PropTypes.object.isRequired,
-    approversCount: PropTypes.number.isRequired
+    approversCount: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired,
+    btnDisabled: PropTypes.bool,
+    isAlreadyApproved: PropTypes.bool
 
 }
 export default RequestRow;

@@ -11,12 +11,15 @@ import { SuccessForm } from '../../../components/SuccessForm';
 import { messageStrings } from '../../../ethereum/messagestrings';
 
 let web3;
+let newRequestsApproved;
 
 class RequstIndex extends Component {
 
     state = {
         errorMessage: '',
-        btnDisabled: true
+        btnDisabled: true,
+        dataUpdated: false,
+        requestsApproved: []
     }
 
     static async getInitialProps(props) {
@@ -38,16 +41,54 @@ class RequstIndex extends Component {
             return element;
         })
 
+        const initRequestsApproved = Array(requestCount).fill().map((element) => {
+            return false;
+        });
+
         return {
             address,
             requests,
             requestCount,
             approversCount,
+            initRequestsApproved
         };
     }
 
-    componentDidMount() {
-        this.checkNetwork();
+    async componentDidMount() {
+        await this.checkNetwork();
+        this.checkIsRequestApproved();
+    }
+
+    async checkIsRequestApproved() {
+        this.setState({ requestsApproved: this.props.initRequestsApproved })
+        let accounts;
+        let campaign;
+        try {
+            campaign = await campaignJS.campaignInit(this.props.address);
+            accounts = await web3.eth.getAccounts();
+        } catch (error) {
+            console.log(error);
+
+        }
+        if (typeof(accounts) !== 'undefined') {
+            newRequestsApproved = await Promise.all(
+                Array(this.props.requestCount).fill().map((element, index) => {
+                    return campaign.methods.isAlreadyApproved(index).call({ from: accounts[0] });
+                })
+            );
+            this.setState({
+                dataUpdated: true
+            });
+        }
+    }
+
+    componentDidUpdate() {
+        if (this.state.dataUpdated) {
+            this.setState({
+                dataUpdated: false,
+                requestsApproved: newRequestsApproved
+            });
+        }
     }
 
 
@@ -71,6 +112,7 @@ class RequstIndex extends Component {
             return <RequestRow
                 key={index}
                 id={index}
+                isAlreadyApproved={this.state.requestsApproved[index]}
                 approversCount={this.props.approversCount}
                 request={request}
                 address={this.props.address}
@@ -92,7 +134,7 @@ class RequstIndex extends Component {
                 </Link >
                 <Link route={`/campaigns/${this.props.address}/requests/new`}>
                     <a>
-                        <Button primary style={{marginBottom:10}}>
+                        <Button primary style={{ marginBottom: 10 }}>
                             Add Request
                         </Button>
                     </a>
@@ -127,7 +169,9 @@ class RequstIndex extends Component {
 RequstIndex.propTypes = {
     address: PropTypes.string.isRequired,
     requests: PropTypes.arrayOf(PropTypes.object),
-    approversCount: PropTypes.number.isRequired
+    approversCount: PropTypes.number.isRequired,
+    requestCount: PropTypes.number.isRequired,
+    initRequestsApproved: PropTypes.any
 }
 
 export default RequstIndex;

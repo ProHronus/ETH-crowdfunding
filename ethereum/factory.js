@@ -2,7 +2,7 @@ import web3JS from './web3';
 import FactoryJSON from './build/CampaignFactory.json'
 
 
-const address = '0x827077c1EFE0eE037c2bE38f2Fe354824a3B43d7';
+const address = '0xfda42b3E2cb59BC5737d60B302Da26e1e0E76EbC';
 
 async function factoryInit() {
 
