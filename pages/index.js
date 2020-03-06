@@ -81,6 +81,16 @@ class CampaignIndex extends Component {
                                 </Link>
                             </Grid.Row>
                             <Grid.Row>
+                            <Grid.Row>
+                                <Link >
+                                    <a>
+                                        <Button
+                                             content='RelayX' icon='add' primary
+                                        />
+                                    </a>
+                                </Link>
+                            </Grid.Row>
+                            <Grid.Row>
                                 <div className="Form"  >
                                     <Form error={!!this.state.errorMessage} style={{marginTop:10}}>
                                         <ErrorForm message={this.state.errorMessage} />

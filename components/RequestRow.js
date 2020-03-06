@@ -43,7 +43,7 @@ class RequestRow extends Component {
                     confirmationNumber: confirmationNumber
                 });
                 if (confirmationNumber == 1) {
-                    Router.replaceRoute(`/campaigns/${this.props.address}/requests`);
+                    Router.pushRoute(`/campaigns/${this.props.address}/requests`);
                 }
             }).on('error', (error) => {
                 this.setState({
@@ -139,7 +139,7 @@ class RequestRow extends Component {
             return null;
         }
 
-        if (this.props.isAlreadyApproved) {
+        else if (this.props.isAlreadyApproved) {
             return (
                 <Button color="green" basic disabled >
                     Approved
