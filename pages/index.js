@@ -5,7 +5,6 @@ import { Grid, Card, Button, Form } from 'semantic-ui-react';
 import Layout from '../components/Layout.js';
 import { Link } from '../routes';
 import PropTypes from 'prop-types';
-
 import { ErrorForm } from '../components/ErrorForm';
 
 let web3;
@@ -75,24 +74,15 @@ class CampaignIndex extends Component {
                                 <Link route="/campaigns/new">
                                     <a>
                                         <Button
-                                             content='Create Campaign' icon='add' primary
+                                            content='Create Campaign' icon='add' primary
                                         />
                                     </a>
                                 </Link>
                             </Grid.Row>
-                            <Grid.Row>
-                            <Grid.Row>
-                                <Link >
-                                    <a>
-                                        <Button
-                                             content='RelayX' icon='add' primary
-                                        />
-                                    </a>
-                                </Link>
-                            </Grid.Row>
+
                             <Grid.Row>
                                 <div className="Form"  >
-                                    <Form error={!!this.state.errorMessage} style={{marginTop:10}}>
+                                    <Form error={!!this.state.errorMessage} style={{ marginTop: 10 }}>
                                         <ErrorForm message={this.state.errorMessage} />
                                     </Form>
                                 </div>
