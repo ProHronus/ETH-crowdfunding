@@ -1,4 +1,4 @@
-﻿<h1 align="left">The app for managing crowdfunding campaigns via the Ethereum blockchain.</h1>
+﻿> The app for managing crowdfunding campaigns via the Ethereum blockchain
 
 ## Description
 
