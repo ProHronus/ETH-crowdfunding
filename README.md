@@ -10,7 +10,7 @@ The transparency and full control under fund spending create secure financial fr
 👉 **Try it on [Heroku](https://eth-kickstater.herokuapp.com/)** 👈
 
 
-** Base structure: **
+**Base structure:**
 - Deploying Solidity contract to the Etherum blockchain
 - Managing smart contract thought web interface
 - Using MetaMask for interaction with user wallet
@@ -18,7 +18,7 @@ The transparency and full control under fund spending create secure financial fr
 - React.JS and Next.JS as frontend frameworks
 
 
-** Smart-contract terms: **
+**Smart-contract terms:**
 - A user who creates the Campaign becomes the Manager
 - Multiple backers can contribute to the Campaign by clicking View Campaign
 - Campaign page shows related funding Requests
@@ -27,15 +27,15 @@ The transparency and full control under fund spending create secure financial fr
 
 
 ## How To Use
-** Before start **
+**Before start**
 - Run `npm install`
 - Install Metamask 
 
-** Running with a deployed smart contract on Rinkeby test network:**
+**Running with a deployed smart contract on Rinkeby test network:**
 1. Run `node server` 
 2. Go to http://localhost:3000/
 
-** Deploying a new smart contract **
+**Deploying a new smart contract**
 1. Create an account on https://infura.io/signup
 2. Copy the Rinkeby test network URL
 3. Open /ethereum/deploy.js and replace `const rinkebyURL` with yours 

@@ -6,3 +6,4 @@ ethereum/.env
 deploy.js
 compile.js
 .env
+bin/
