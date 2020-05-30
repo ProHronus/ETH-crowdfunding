@@ -2,9 +2,9 @@
 
 ## Description
 
-Create and managing smart-contract for crowdfunding campaigns on Ethereum Blockchain through a simple web interface. Smart-contract hold all funds that bakers send to support a particular Campaign.  Backers can control each transaction by approving each payment request.
+Create and managing smart-contract for crowdfunding campaigns on Ethereum Blockchain through a simple web interface. Smart-contract holds all funds that bakers send to support a particular Campaign. Backers can control each transaction by approving each payment request.
 
-The transparency and full control under fund spending create secure financial framework without any intermediate party.
+The transparency and full control under fund spending create a secure financial framework without any intermediate party.
 
 
 👉 **Try it on [Heroku](https://eth-kickstater.herokuapp.com/)** 👈
